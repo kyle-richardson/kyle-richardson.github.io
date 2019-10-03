@@ -1,0 +1,377 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* Variables */
+
+@background-color: white;
+@light-color: rgb(196, 225, 252);
+@dark-color: rgb(45, 100, 145);
+@button-color: white;
+@anchor-hover-color: @light-color;
+
+@mobile: ~'(max-width:500px)';
+@tablet: ~'(max-width:880px)';
+
+/* Mixins */
+
+.flex-setup (@direction, @justify){
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+}
+
+.base-margin {
+	margin: 20px auto;
+}
+
+.set-mobile {
+		.flex-setup(column, center);
+		align-content: stretch;
+		align-items: center;
+		padding: 0;
+		width: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+html {
+	font-size: 62.5%;
+	background-color: @background-color;
+	width: 850px;
+	margin: auto;
+	font-family: 'Titillium Web', sans-serif;
+	@media @tablet {
+		width: 100%;
+	}
+	
+}
+body {
+	line-height: 1;
+	font-size: 1.5rem;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* button style reset addition */
+
+button {
+
+	border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Whole document style */
+
+h1 {
+	font-size: 4rem;
+	margin-bottom: 5px;
+
+}
+h3 {
+	font-size: 2.2rem;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+h4 {
+	font-size: 2rem;
+}
+
+html, body {
+    height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	&:hover {
+		color: @anchor-hover-color;
+	}
+}
+
+/* container specific styling, nested format */
+
+.container {
+	
+	@media @tablet{
+		width: 91%;
+		margin: auto;
+	}
+	header {
+		background-color: @dark-color;
+		padding: 20px;
+		#navigation {
+			.flex-setup(row, space-between);
+			align-content: baseline;
+			width: 40%;
+			@media @tablet {
+				width: 80%;
+				margin: auto;
+			}
+			@media @mobile {
+				flex-direction: row;
+				justify-content: space-evenly;
+				width: 100%;
+			}
+			a {
+				margin: 7px 0;
+				color: white;
+				&:hover {
+					color: @anchor-hover-color;
+				}
+			}
+		}
+	}
+	.top {
+		.flex-setup(column, space-evenly);
+		align-items: center;
+		border: 1px solid @light-color;
+		background-color: @light-color;
+		padding: 1.5rem;;
+		@media @mobile {
+			.set-mobile();
+			padding: 5%;
+		}
+		.self-photo {
+			border-radius: 8px;
+			margin-bottom: 20px;
+			align-self: center;
+			@media @mobile{
+				width: 100%;
+			}
+	
+		}
+		.line {
+			border: 1px solid @dark-color;
+			.base-margin();
+			width: 100%;
+		}
+		h1,h4 {
+			text-align: center;
+		}
+		
+	}
+	
+	.main {
+		.base-margin();
+		.flex-setup(row, space-between);
+		
+		div {
+			width: 48%;
+			@media @mobile {
+				// .base-margin();
+				width: 100%;
+			}
+			table {
+				width: 100%;
+				tr {
+					border: 1px solid @dark-color;
+					th {
+						font-weight: bold;
+					}
+					td {
+						padding: 10px;
+					}
+				}
+			}
+		}
+		#intro {
+			.flex-setup(column, space-between);
+			.buttons {
+				.flex-setup(row, space-evenly);
+				align-self: center;
+				width: 100%;
+				a {
+					text-align: center;
+					width: 150px;
+					background-color: @dark-color;
+					border: 1px solid @dark-color;
+					border-radius: 8px;
+					padding: 10px;
+					color: white;
+					margin: 10px;
+					@media @mobile {
+						width: 100%;
+						align-self: center;
+						margin:0;
+						border-radius: 0;
+						&:first-child {
+							border-bottom-color: @light-color;
+							margin-top: 10px;
+						}
+						&:last-child {
+							margin-bottom: 10px;
+						}
+					}
+					&:hover {
+						background-color: lighten(@dark-color,15%);
+					}
+			
+					&:active {
+						background-color: lighten(@dark-color,30%);
+		
+					}
+				}
+				@media @mobile {
+					flex-direction: column;
+				}
+			}
+			
+			
+		}
+		@media @mobile {
+			.set-mobile();
+		}
+	}
+	
+	.lower {
+		.base-margin();
+		table {
+			width: 100%;
+			text-align: left;
+			tr {
+				border: 1px solid @dark-color;
+				> th, td {
+					padding: 10px;
+				}
+				th {
+					font-weight: bold;	
+				}
+			}
+			.dark-cell {
+				background-color: @light-color;
+			}
+		}
+			
+	}
+	
+	footer {
+		.flex-setup(row,space-between);
+		div {
+			.base-margin();
+			width: 48%;
+			@media @mobile {
+				width: 100%;
+			}
+		}
+		#contact-info {
+			h3 {
+				margin-right: 50px;
+			}
+			
+		}
+		.icons-div {
+			align-self: center;
+			margin-right: 40px;
+			.icons {
+				.flex-setup(row, space-evenly);
+				align-items: flex-end;
+				i {
+					font-size: 2.5rem;
+					border: 1px solid @dark-color;
+					border-radius: 2.5rem;
+					padding: 5px;
+					color: @dark-color;
+					&:hover {
+						border-color: @light-color;
+						color: @light-color;
+					}
+				}
+				@media @mobile {
+					margin: 0;
+					.set-mobile();
+					.flex-setup(row, center);
+					li {
+						margin: 5px;
+					}
+				}
+			}
+			@media @mobile {
+				margin: 0;
+			}
+		}
+		@media @mobile {
+			.set-mobile();
+		}
+	}
+	
+	.copyright {
+		padding-top: 20px;
+		color: white;
+		text-align: center;
+		padding-bottom: 30px;
+		background-color: @dark-color;
+		margin: auto;
+	}
+}
+
+
