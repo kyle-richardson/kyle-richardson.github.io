@@ -123,9 +123,9 @@ html {
   background-color: white;
   width: 850px;
   margin: auto;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
-@media (max-width:880px) {
+@media (max-width: 880px) {
   html {
     width: 100%;
   }
@@ -146,7 +146,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -201,7 +201,7 @@ a:hover {
   color: #c4e1fc;
 }
 /* container specific styling, nested format */
-@media (max-width:880px) {
+@media (max-width: 880px) {
   .container {
     width: 91%;
     margin: auto;
@@ -216,12 +216,12 @@ a:hover {
   align-content: left;
   width: 40%;
 }
-@media (max-width:880px) {
+@media (max-width: 880px) {
   .container header #navigation {
     width: 80%;
   }
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container header #navigation {
     flex-direction: row;
     justify-content: space-evenly;
@@ -244,7 +244,7 @@ a:hover {
   background-color: #c4e1fc;
   padding: 1.5rem;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container .top {
     display: flex;
     flex-direction: column;
@@ -261,7 +261,7 @@ a:hover {
   margin-bottom: 20px;
   align-self: center;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container .top .self-photo {
     width: 100%;
   }
@@ -284,7 +284,7 @@ a:hover {
 .container .main div {
   width: 48%;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container .main div {
     width: 100%;
   }
@@ -304,7 +304,7 @@ a:hover {
 .container .main #intro {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .container .main #intro .buttons {
   display: flex;
@@ -323,7 +323,7 @@ a:hover {
   color: white;
   margin: 10px;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container .main #intro .buttons a {
     width: 100%;
     align-self: center;
@@ -344,12 +344,12 @@ a:hover {
 .container .main #intro .buttons a:active {
   background-color: #80b0d7;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container .main #intro .buttons {
     flex-direction: column;
   }
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container .main {
     display: flex;
     flex-direction: column;
@@ -389,7 +389,7 @@ a:hover {
   margin: 20px auto;
   width: 48%;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container footer div {
     width: 100%;
   }
@@ -418,7 +418,7 @@ a:hover {
   border-color: #c4e1fc;
   color: #c4e1fc;
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container footer .icons-div .icons {
     margin: 0;
     flex-direction: column;
@@ -434,12 +434,12 @@ a:hover {
     margin: 5px;
   }
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container footer .icons-div {
     margin: 0;
   }
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .container footer {
     display: flex;
     flex-direction: column;
