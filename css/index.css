@@ -213,15 +213,12 @@ a:hover {
 }
 .container header #navigation {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: baseline;
+  align-content: left;
   width: 40%;
 }
 @media (max-width: 880px) {
   .container header #navigation {
     width: 80%;
-    margin: auto;
   }
 }
 @media (max-width: 500px) {
@@ -232,7 +229,7 @@ a:hover {
   }
 }
 .container header #navigation a {
-  margin: 7px 0;
+  margin: 7px 15px;
   color: white;
 }
 .container header #navigation a:hover {

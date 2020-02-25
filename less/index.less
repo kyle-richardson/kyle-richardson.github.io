@@ -243,12 +243,11 @@ a {
     background-color: @dark-color;
     padding: 20px;
     #navigation {
-      .flex-setup(row, space-between);
-      align-content: baseline;
+      display: flex;
+      align-content: left;
       width: 40%;
       @media @tablet {
         width: 80%;
-        margin: auto;
       }
       @media @mobile {
         flex-direction: row;
@@ -256,7 +255,7 @@ a {
         width: 100%;
       }
       a {
-        margin: 7px 0;
+        margin: 7px 15px;
         color: white;
         &:hover {
           color: @anchor-hover-color;
@@ -317,7 +316,7 @@ a {
       }
     }
     #intro {
-      .flex-setup(column, flex-start);
+      .flex-setup(column, space-between);
       .buttons {
         .flex-setup(row, space-evenly);
         align-self: center;
